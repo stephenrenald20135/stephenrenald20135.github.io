@@ -14,6 +14,15 @@ layout: default
 <body>
 <h1>S. Renald's Tech Blog for How-to's & Solutions</h1>
 <p>Welcome to my blog where you will learn how to solve stuff using technology regardless of your technical skillset and level.</p>
-<p>Wait for new blogs...updating now...</p>
+  <h2>Latest Articles</h2>
+  <ul>
+    {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a> 
+      <span>({{ post.date | date: "%b %d, %Y" }})</span>
+      <p>{{ post.description }}</p>  <!-- Shows meta description -->
+    </li>
+    {% endfor %}
+  </ul>
 </body>
 </html>
